@@ -14,9 +14,14 @@ ADD Pipfile Pipfile.lock /httpbin/
 WORKDIR /httpbin
 RUN /bin/bash -c "pip3 install --no-cache-dir -r <(pipenv lock -r)"
 
+#COPY cert.pem .
+#COPY key.pem .
+
 ADD . /httpbin
 RUN pip3 install --no-cache-dir /httpbin
 
+#EXPOSE 443
 EXPOSE 80
 
+#CMD ["gunicorn", "-b", "0.0.0.0:443", "--certfile", "cert.pem", "--keyfile", "key.pem", "httpbin:app", "-k", "gevent"]
 CMD ["gunicorn", "-b", "0.0.0.0:80", "httpbin:app", "-k", "gevent"]
