@@ -7,11 +7,11 @@ gunicorn = "*"
 decorator = "*"
 brotlipy = "*"
 gevent = "*"
-Flask < "2.3.0"
+Flask = "*"
 meinheld = "*"
 werkzeug = ">=0.14.1"
 six = "*"
-flasgger = "0.9.7b2"
+flasgger = "*"
 pyyaml = {git = "https://github.com/yaml/pyyaml.git"}
 
 [dev-packages]
