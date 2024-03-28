@@ -9,3 +9,7 @@ dist/
 *.egg-info
 *.swp
 .vscode/
+cert.pem
+httpbin-oas.json
+key.pem
+
